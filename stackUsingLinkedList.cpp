@@ -6,7 +6,7 @@ class Node
 {
 public:
     int data;
-    Node *data;
+    Node *next;
 
     Node()
     {
@@ -20,14 +20,14 @@ class stack
 private:
     Node *top;
 
-public
+public:
     stack()
     {
-        top = NULL
+        top = NULL;
     }
     int push(int value)
     {
-        Node *newnode = new Node();
+        Node *newNode = new Node();
         newNode->data = value;
         newNode->next = top;
         top = newNode;
@@ -46,7 +46,7 @@ public
         cout << "Popped value: " << top->data << endl;
     }
 
-    void peak()
+    void peek()
     {
         if (top == NULL)
         {
